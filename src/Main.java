@@ -9,8 +9,7 @@ public class Main {
         placesToVisit.add(0,"Barhi");
         addPlaces(placesToVisit);
         System.out.println(placesToVisit);
-        removePlaces(placesToVisit);
-        System.out.println(placesToVisit);
+        getElement(placesToVisit);
 }
 
     private static void addPlaces(LinkedList<String> list ){
@@ -47,5 +46,19 @@ public class Main {
         list.push("Barhi");
 
         list.pop();
+    }
+
+    private static void getElement(LinkedList<String> list){
+        System.out.println("5th Element = " + list.get(4) );
+        System.out.println("1th Element = " + list.getFirst() );
+        System.out.println("Last Element = " + list.getLast() );
+        System.out.println("Index of  Shahdol = " + list.indexOf("Shahdol") );
+        System.out.println("Index of  Denmark = " + list.lastIndexOf("Denmark") );
+        //Queue retrieval methods
+        System.out.println("Element from element() = "+list.element());
+        //Stack retrieval methods
+        System.out.println("Element form peak() = "+list.peek());
+        System.out.println("Element form peakFirst()= "+list.peekFirst());
+        System.out.println("Element form peakLast()= "+list.peekLast());
     }
 }
