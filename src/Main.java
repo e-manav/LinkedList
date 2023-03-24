@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Main {
@@ -10,6 +9,7 @@ public class Main {
         addPlaces(placesToVisit);
         System.out.println(placesToVisit);
         getElement(placesToVisit);
+        getItinerary1(placesToVisit);
 }
 
     private static void addPlaces(LinkedList<String> list ){
@@ -60,5 +60,23 @@ public class Main {
         System.out.println("Element form peak() = "+list.peek());
         System.out.println("Element form peakFirst()= "+list.peekFirst());
         System.out.println("Element form peakLast()= "+list.peekLast());
+    }
+
+    private static void getItinerary(LinkedList<String> list){
+        System.out.println("First location ==> " +list.getFirst());
+        for (int i= 1; i<list.size(); i++){
+            System.out.println("-- From - " + list.get(i-1)+" to - "+list.get(i) );
+        }
+        System.out.println("Last location ==> " +list.getLast());
+    }
+    private static void getItinerary1(LinkedList<String> list){
+        System.out.println("First location ==> " +list.getFirst());
+        String previousLocation = list.getFirst();
+        for (String city :
+                list) {
+            System.out.println("-- From - " + previousLocation + " to - " + city);
+            previousLocation = city;
+        }
+        System.out.println("Last location ==> " +list.getLast());
     }
 }
